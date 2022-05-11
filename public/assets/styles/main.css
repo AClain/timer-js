@@ -18,11 +18,10 @@ input[type="number"] {
 	-webkit-appearance: none;
 	-moz-appearance: textfield;
 
-	font-size: 75px;
+	font-size: 3.5em;
 	text-align: center;
 
-	width: 75px;
-	/* height: 100px; */
+	width: 2em;
 }
 
 .input-container {
@@ -30,7 +29,7 @@ input[type="number"] {
 }
 
 .change-input-value {
-	font-size: 50px;
+	font-size: 2em;
 }
 
 .change-input-value:hover {
@@ -38,6 +37,18 @@ input[type="number"] {
 }
 
 .annotation {
+	font-size: 2.5rem;
+	font-weight: bold;
+
+	vertical-align: middle;
 	padding: 10px;
-	font-size: 75px;
+}
+
+#control-buttons {
+	margin-top: 25px;
+}
+
+#control-buttons button {
+	font-size: 1.5em;
+	color: white;
 }

@@ -19,7 +19,7 @@
 					width="30"
 					height="30"
 					class="d-inline-block align-top"
-					alt="router-js logo"
+					alt="timer-js logo"
 				/>
 				timer-js
 			</a>
@@ -37,7 +37,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="/">Timer</a>
 					</li>
 				</ul>
@@ -47,141 +47,38 @@
 
 		<main class="container h-100">
 			<form method="POST" class="d-flex flex-column justify-content-center align-items-center h-100">
-				<div class="d-flex">
+				<div class="d-flex" id="timer">
 					<div class="d-flex flex-row align-items-center">
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="1"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="first_hour"
-									data-input-id="1"
-									aria-label="First hour"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="1"></i>
-							</div>
-						</div>
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="2"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="Second_hour"
-									data-input-id="2"
-									aria-label="Second hour"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="2"></i>
-							</div>
-						</div>
-						<span class="annotation">:</span>
+						<timer-input value="0" label="hours" hours></timer-input>
+						<span class="annotation">h</span>
 					</div>
 					<div class="d-flex flex-row align-items-center">
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="3"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="first_minute"
-									data-input-id="3"
-									aria-label="First minute"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="3"></i>
-							</div>
-						</div>
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="4"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="second_minute"
-									data-input-id="4"
-									aria-label="Second minute"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="4"></i>
-							</div>
-						</div>
-						<span class="annotation">:</span>
+						<timer-input value="0" label="minutes" minutes></timer-input>
+						<span class="annotation">m</span>
 					</div>
 					<div class="d-flex flex-row align-items-center">
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="5"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="first_second"
-									data-input-id="5"
-									aria-label="First second"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="5"></i>
-							</div>
-						</div>
-						<div class="d-flex flex-column align-items-center input-container">
-							<div class="">
-								<i class="fa-solid fa-caret-up change-input-value increase" data-linked-input-id="5"></i>
-							</div>
-							<div class="">
-								<input
-									disabled
-									type="number"
-									name="second_second"
-									data-input-id="5"
-									aria-label="Second second"
-									class="form-control"
-									value="0"
-								/>
-							</div>
-							<div class="">
-								<i class="fa-solid fa-caret-down change-input-value decrease" data-linked-input-id="5"></i>
-							</div>
-						</div>
+						<timer-input value="0" label="seconds" seconds></timer-input>
+						<span class="annotation">s</span>
 					</div>
 				</div>
-				<div class="btn-group align-items-center" role="group" aria-label="Form button group">
-					<button type="button" class="btn btn-secondary">Start</button>
-					<button type="button" class="btn btn-secondary">Pause</button>
-					<button type="button" class="btn btn-secondary">Reset</button>
+				<div class="btn-group align-items-center" id="control-buttons" role="group" aria-label="Timer control buttons">
+					<button id="start" title="start" type="button" class="btn btn-success">
+						<i class="fa-solid fa-play"></i>
+					</button>
+					<button id="pause" title="pause" type="button" class="btn btn-warning">
+						<i class="fa-solid fa-pause"></i>
+					</button>
+					<button id="reset" title="reset" type="button" class="btn btn-danger">
+						<i class="fa-solid fa-clock-rotate-left"></i>
+					</button>
 				</div>
 			</form>
 		</main>
+
 		<!-- JQuery for Bootstrap -->
 		<script src="/public/assets/scripts/jquery.min.js"></script>
 		<script src="/public/assets/scripts/bootstrap.min.js"></script>
-		<script src="/src/input-check.js" type="module" defer></script>
+		<script src="/src/custom-elements.js" type="module" defer></script>
 		<script src="/src/index.js" type="module" defer></script>
 	</body>
 </html>
