@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+* {
+	box-sizing: border-box;
+	color: inherit;
+}
+
+html,
+body {
+	margin: 0px;
+	background: #222831;
+	color: #f1f1f1;
+
+	height: 60vh;
+}
+
+input[type="number"] {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+
+	font-size: 75px;
+	text-align: center;
+
+	width: 75px;
+	/* height: 100px; */
+}
+
+.input-container {
+	margin: 0px 5px;
+}
+
+.change-input-value {
+	font-size: 50px;
+}
+
+.change-input-value:hover {
+	cursor: pointer;
+}
+
+.annotation {
+	padding: 10px;
+	font-size: 75px;
+}
