@@ -81,10 +81,6 @@ export class Timer {
 		}
 
 		this.interval = setInterval(() => {
-			this.seconds--;
-			this.secondsElapsed++;
-			this.secondsLeft--;
-
 			this.secondsTimerInput.decreaseButton.click();
 			if (this.secondsLeft > 0 && this.seconds - 1 < 0) {
 				this.seconds = 59;
@@ -108,6 +104,10 @@ export class Timer {
 			if (this.secondsLeft === 0) {
 				this.reset();
 			}
+
+			this.seconds--;
+			this.secondsElapsed++;
+			this.secondsLeft--;
 		}, 1000);
 
 		return true;
